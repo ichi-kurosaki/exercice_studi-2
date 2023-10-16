@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  background: url(image/andrey-haimin-q2Fyzn-KJOQ-unsplash.jpg);
+  background-size: cover;
+  height: 90vh;
+  font-size: 2em;
+  color: black;
+}
+
+main {
+  background-color: white;
+  margin: 50px;
+  height: 90vh;
+}
+
+.nouvelle_partie img {
+  width: 3%;
+}
+
+.nouvelle_partie {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.nouvelle_partie img,
+.shadow,
+.debut_partie,
+.bouton:hover {
+  cursor: pointer;
+}
+.nouvelle_partie img:hover,
+.bouton:hover,
+.mise img:hover {
+  opacity: 0.5;
+}
+
+.actif_player1 img,
+.actif_player2 img {
+  height: 10%;
+}
+.player1,
+.player2 {
+  font-size: 1.5em;
+}
+
+.player1 p,
+.player2 p {
+  margin: 20px;
+}
+
+.actif_player1,
+.actif_player2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.actif_p1,
+.actif_p2 {
+  display: none;
+}
+
+#game div {
+  text-align: center;
+}
+
+.debut_partie {
+  box-shadow: 10px 10px 10px #cf7575;
+}
+
+#game {
+  display: grid;
+  grid-template: 50% 50% /1fr 1fr 1fr;
+  gap: 50px;
+}
+.player1 {
+  grid-column: 1/1;
+}
+#de {
+  grid-column: 2/2;
+}
+.player2 {
+  grid-column: 3/3;
+}
+.current_p1 {
+  grid-column: 1/1;
+}
+.current_p2 {
+  grid-column: 3/3;
+}
+
+.current_p1 p,
+.current_p2 p {
+  margin: 0%;
+}
+.current_p1,
+.current_p2 {
+  background-color: #ec7878;
+  width: 50%;
+  height: 70%;
+  margin-left: 25%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.score_p1,
+.score_p2 {
+  color: white;
+}
+.mise img {
+  width: 10%;
+  cursor: pointer;
+}
+
+.mise div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* animation du dé */
+@keyframes lancement_de {
+  100% {
+    transform: rotateX(360deg);
+    background-color: rgb(12, 8, 1);
+  }
+}
+
+.shadow {
+  box-shadow: 10px 10px 10px #cf7575;
+  animation: linear 1s lancement_de;
+}
+
+.formulaire {
+  background-color: #cf7575;
+  color: white;
+  width: 200px;
+  text-align: center;
+  padding: 30px;
+  border-radius: 30px;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  display: none;
+}
+
+.bouton {
+  color: #cf7575;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 30px;
+  background-color: white;
+  font-weight: bold;
+  font-size: medium;
+}
