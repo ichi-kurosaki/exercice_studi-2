@@ -130,7 +130,7 @@ function holding(joueur) {
   scoreHold[joueur].innerHTML =
     Number(score_player[joueur].innerHTML) +
     Number(scoreHold[joueur].innerHTML);
-  if (parseInt(scoreHold[joueur].innerHTML) >= 20) {
+  if (parseInt(scoreHold[joueur].innerHTML) >= 100) {
     victoire.style.display = "block";
     winner.innerHTML = `VICTOIRE!! félicitaion ${name_player[joueur].innerHTML} vous avez gagné`;
     game.style.pointerEvents = "none";
@@ -141,7 +141,6 @@ function holding(joueur) {
 }
 
 //lancer de dé
-
 for (let lancer of lancer_de) {
   lancer.addEventListener("click", () => {
     de.children[0].remove();

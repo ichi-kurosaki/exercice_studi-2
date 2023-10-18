@@ -14,7 +14,7 @@ main {
 }
 
 .nouvelle_partie img {
-  width: 3%;
+  width: 5%;
 }
 
 .nouvelle_partie {
@@ -174,4 +174,58 @@ main {
   padding: 20px;
   text-align: center;
   display: none;
+}
+
+/*partie responsive*/
+@media all and (max-width: 1000px) {
+  body {
+    font-size: small;
+  }
+  main {
+    margin: 2%;
+  }
+  .debut_partie,
+  .shadow {
+    width: 70%;
+  }
+  .actif_player1,
+  .actif_player2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .actif_p1,
+  .actif_p2 {
+    width: 9%;
+  }
+  #game {
+    display: grid;
+    grid-template: 50% 50% /1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .mise div img {
+    width: 30%;
+  }
+  .mise {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .mise div {
+    font-size: x-small;
+  }
+  .formulaire {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+  }
+  #victoire {
+    width: 60%;
+    left: 20%;
+    top: 10%;
+  }
+  .player1 p,
+  .player2 p {
+    margin: 10px;
+  }
 }
