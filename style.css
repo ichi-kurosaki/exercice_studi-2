@@ -27,12 +27,13 @@ main {
 .nouvelle_partie img,
 .shadow,
 .debut_partie,
-.bouton:hover {
+.lancerLaPartie:hover {
   cursor: pointer;
 }
 .nouvelle_partie img:hover,
-.bouton:hover,
-.mise img:hover {
+.lancerLaPartie:hover,
+.mise img:hover,
+#victoire button:hover {
   opacity: 0.5;
 }
 
@@ -49,7 +50,9 @@ main {
 .player2 p {
   margin: 20px;
 }
-
+.score_player {
+  color: #ec7575;
+}
 .actif_player1,
 .actif_player2 {
   display: flex;
@@ -67,13 +70,14 @@ main {
 }
 
 .debut_partie {
-  box-shadow: 10px 10px 10px #cf7575;
+  box-shadow: 10px 10px 10px #ec7575;
 }
-
+/*placement des éléments sur la page */
 #game {
   display: grid;
   grid-template: 50% 50% /1fr 1fr 1fr;
   gap: 50px;
+  pointer-events: none;
 }
 .player1 {
   grid-column: 1/1;
@@ -97,7 +101,7 @@ main {
 }
 .current_p1,
 .current_p2 {
-  background-color: #ec7878;
+  background-color: #ec7575;
   width: 50%;
   height: 70%;
   margin-left: 25%;
@@ -106,8 +110,7 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.score_p1,
-.score_p2 {
+.scoreHold {
   color: white;
 }
 .mise img {
@@ -126,17 +129,17 @@ main {
 @keyframes lancement_de {
   100% {
     transform: rotateX(360deg);
-    background-color: rgb(12, 8, 1);
   }
 }
 
 .shadow {
-  box-shadow: 10px 10px 10px #cf7575;
+  box-shadow: 10px 10px 10px #ec7575;
   animation: linear 1s lancement_de;
 }
 
+/*mise en forme du formulaire pour le lancement de la partie */
 .formulaire {
-  background-color: #cf7575;
+  background-color: #ec7575;
   color: white;
   width: 200px;
   text-align: center;
@@ -148,12 +151,27 @@ main {
   display: none;
 }
 
-.bouton {
-  color: #cf7575;
+.lancerLaPartie,
+#victoire button {
+  color: #ec7575;
   padding: 10px;
   margin-top: 20px;
   border-radius: 30px;
   background-color: white;
   font-weight: bold;
   font-size: medium;
+  color: linear-gradient(to left, #9198e5, #ec7575);
+}
+/*mise en forme du formulaire quand la partie est terminé */
+#victoire {
+  background: linear-gradient(to left, #9198e5, #ec7575);
+  border-radius: 30px;
+  width: 30%;
+  height: 25%;
+  position: absolute;
+  top: 20%;
+  left: 33%;
+  padding: 20px;
+  text-align: center;
+  display: none;
 }
