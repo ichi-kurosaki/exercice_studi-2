@@ -1,11 +1,11 @@
 //objet contenant les faces du dé
 const face_de = {
-  1: "/image/de1.png",
-  2: "/image/de2.png",
-  3: "/image/de3.png",
-  4: "/image/de4.png",
-  5: "/image/de5.png",
-  6: "/image/de6.png",
+  1: "./image/de1.png",
+  2: "./image/de2.png",
+  3: "./image/de3.png",
+  4: "./image/de4.png",
+  5: "./image/de5.png",
+  6: "./image/de6.png",
 };
 //tableau contenant valeur de chaque face
 const valeurDe = Object.keys(face_de);
