@@ -79,11 +79,11 @@
       </div>
 
       <div class="formulaire">
-        <form method="post">
-          <label for="player1">player1</label>
-          <input type="text" id="form_player1" maxlength="15" />
-          <label for="player2">player2</label>
-          <input type="text" id="form_player2" maxlength="15" />
+        <form class="form" method="post">
+          <label for="form_player1"">player1</label>
+          <input type="text" id="form_player1" maxlength="15" class="input" />
+          <label for="form_player2">player2</label>
+          <input type="text" id="form_player2" maxlength="15" class="input" />
           <input
             type="button"
             value="Lancer la partie"
@@ -95,6 +95,26 @@
         <p class="winner"></p>
         <button class="revanche">Revanche</button>
         <button class="nouvellePartie">Nouvelle partie</button>
+      </div>
+      <div id="regleDuJeu">
+        <div class="titre">
+          <h2>Règle du jeu :</h2>
+          <p class="x fermeture">X</p>
+        
+        </div>
+        
+        <p>
+          Chaque joueur possède un score temporaire (ROUND) et un score global
+          (CURRENT). À chaque tour, le joueur a son ROUND à 0 et peut lancer un
+          dé autant de fois qu'il le souhaite. Le résultat d’un lancer est
+          ajouté au ROUND. Lors de son tour, le joueur peut décider à tout
+          moment de: - Cliquer sur l’option “Hold”, qui permet d’envoyer les
+          points du ROUND vers le CURRENT. Ce sera alors le tour de l’autre
+          joueur. - Lancer le dé. S’il obtient un 1, son score ROUND est perdu
+          et c’est la fin de son tour. Le premier joueur qui atteint les 100
+          points sur CURRENT gagne le jeu.
+        </p>
+        <button class="btnRegle fermeture">C'est parti</button>
       </div>
     </main>
     <script src="script.js"></script>

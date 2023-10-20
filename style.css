@@ -27,13 +27,18 @@ main {
 .nouvelle_partie img,
 .shadow,
 .debut_partie,
-.lancerLaPartie:hover {
+.lancerLaPartie:hover,
+.btnRegle,
+.x,
+.btnRegle {
   cursor: pointer;
 }
 .nouvelle_partie img:hover,
 .lancerLaPartie:hover,
 .mise img:hover,
-#victoire button:hover {
+#victoire button:hover,
+.btnRegle:hover,
+.x:hover {
   opacity: 0.5;
 }
 
@@ -150,32 +155,83 @@ main {
   left: 40%;
   display: none;
 }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input {
+  border-radius: 30px;
+  border: none;
+  padding: 7px;
+  font-size: large;
+}
 
+/*mise en forme des boutons*/
 .lancerLaPartie,
-#victoire button {
+#victoire button,
+.btnRegle {
   color: #ec7575;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 12px;
+  margin: 5px;
   border-radius: 30px;
   background-color: white;
   font-weight: bold;
-  font-size: medium;
-  color: linear-gradient(to left, #9198e5, #ec7575);
+  border: none;
 }
+.lancerLaPartie {
+  font-size: medium;
+}
+#victoire button,
+.btnRegle {
+  font-size: 1em;
+}
+
 /*mise en forme du formulaire quand la partie est terminé */
 #victoire {
   background: linear-gradient(to left, #9198e5, #ec7575);
   border-radius: 30px;
   width: 30%;
-  height: 25%;
   position: absolute;
   top: 20%;
   left: 33%;
   padding: 20px;
   text-align: center;
   display: none;
+  font-size: 0.7em;
+  vertical-align: center;
+  margin: auto;
 }
 
+/*mise en forme des regles de jeu*/
+#regleDuJeu {
+  background-color: #ec7575;
+  width: 80%;
+  border-radius: 30px;
+  position: absolute;
+  text-align: center;
+  top: 10%;
+  left: 10%;
+  border: 3px solid black;
+  display: none;
+  padding: 20px;
+}
+.x {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 4%;
+  position: relative;
+  background-color: white;
+  margin: 3px;
+}
+.titre h2 {
+  margin: 0;
+}
+.titre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 /*partie responsive*/
 @media all and (max-width: 1000px) {
   body {
@@ -186,7 +242,7 @@ main {
   }
   .debut_partie,
   .shadow {
-    width: 70%;
+    width: 50%;
   }
   .actif_player1,
   .actif_player2 {
@@ -201,10 +257,10 @@ main {
   #game {
     display: grid;
     grid-template: 50% 50% /1fr 1fr 1fr;
-    gap: 10px;
+    gap: 30px;
   }
   .mise div img {
-    width: 30%;
+    width: 20%;
   }
   .mise {
     display: flex;
@@ -217,15 +273,35 @@ main {
   .formulaire {
     position: absolute;
     top: 10%;
-    left: 20%;
+    left: 26%;
+    width: 40%;
+    padding: 15px;
   }
   #victoire {
     width: 60%;
-    left: 20%;
+    left: 15%;
     top: 10%;
   }
   .player1 p,
   .player2 p {
     margin: 10px;
+  }
+  .lancerLaPartie,
+  #victoire button,
+  .btnRegle {
+    font-size: x-small;
+    padding: 6px;
+  }
+  .current_p1,
+  .current_p2 {
+    padding: 7px;
+  }
+  .input {
+    font-size: x-small;
+  }
+
+  #regleDuJeu {
+    left: 4%;
+    top: 5%;
   }
 }

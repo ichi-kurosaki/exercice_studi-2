@@ -30,6 +30,8 @@ const victoire = document.getElementById("victoire");
 const revanche = document.querySelector(".revanche");
 const nouvellePartie = document.querySelector(".nouvellePartie");
 const winner = document.querySelector(".winner");
+const regleDuJeu = document.getElementById("regleDuJeu");
+const fermetureRegle = document.querySelectorAll(".fermeture");
 
 //fonction qui nous permet de générer aléatoirement un chiffre en 0 et 6
 function alea() {
@@ -84,7 +86,7 @@ nouvellePartie.addEventListener("click", () => {
   formulaire.style.display = "block";
 });
 
-//event qui met à jour le nom des joueurs et lance la partie
+//event qui met à jour le nom des joueurs et affiche les regles
 btn_formulaire.addEventListener("click", () => {
   if (form_player1.value == "" || form_player2.value == "") {
     name_player[0].innerHTML = "Player 1";
@@ -94,12 +96,19 @@ btn_formulaire.addEventListener("click", () => {
     name_player[1].innerHTML = form_player2.value;
   }
   formulaire.style.display = "none";
-  actif_p1.style.display = "block";
-  game.style.pointerEvents = "auto";
-  resetScore();
-  resetActif();
-  console.log(name_player[0].innerHTML);
+  regleDuJeu.style.display = "block";
 });
+
+//event qui ferme les regles et lance la partie
+for (let fermeture of fermetureRegle) {
+  fermeture.addEventListener("click", () => {
+    regleDuJeu.style.display = "none";
+    actif_p1.style.display = "block";
+    game.style.pointerEvents = "auto";
+    resetScore();
+    resetActif();
+  });
+}
 
 // fonction score
 function scoring(joueur, valeur_du_de) {
@@ -130,11 +139,11 @@ function holding(joueur) {
   scoreHold[joueur].innerHTML =
     Number(score_player[joueur].innerHTML) +
     Number(scoreHold[joueur].innerHTML);
-  if (parseInt(scoreHold[joueur].innerHTML) >= 100) {
+  if (parseInt(scoreHold[joueur].innerHTML) >= 20) {
     victoire.style.display = "block";
     winner.innerHTML = `VICTOIRE!! félicitaion ${name_player[joueur].innerHTML} vous avez gagné`;
     game.style.pointerEvents = "none";
-    return (scoreHold[joueur].innerHTML = 0);
+    return (scoreHold[joueur].innerHTML = "WINNER");
   } else {
     return (score_player[joueur].innerHTML = 0);
   }
